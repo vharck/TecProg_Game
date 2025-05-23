@@ -17,7 +17,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 )
 
 # Find SFML - keep your professor's version
-find_package(SFML 2.5.1 COMPONENTS graphics audio)
+find_package(SFML 2.5.1 COMPONENTS graphics audio REQUIRED)
 
 # For NixOS - skip the download attempt and fail fast
 if(NOT SFML_FOUND AND NOT DEFINED ENV{SFML_DIR})

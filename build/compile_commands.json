@@ -1,0 +1,82 @@
+[
+{
+  "directory": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build",
+  "command": "/nix/store/dq0xwmsk1g0i2ayg6pb7y87na2knzylh-gcc-wrapper-11.3.0/bin/g++  -I/home/sami/Code/study/c_cpp/SFML/TecProg_Game/include  -o CMakeFiles/SimpleGame.dir/src/Characters/BossEnemyCharacter.cpp.o -c /home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Characters/BossEnemyCharacter.cpp",
+  "file": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Characters/BossEnemyCharacter.cpp"
+},
+{
+  "directory": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build",
+  "command": "/nix/store/dq0xwmsk1g0i2ayg6pb7y87na2knzylh-gcc-wrapper-11.3.0/bin/g++  -I/home/sami/Code/study/c_cpp/SFML/TecProg_Game/include  -o CMakeFiles/SimpleGame.dir/src/Characters/Character.cpp.o -c /home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Characters/Character.cpp",
+  "file": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Characters/Character.cpp"
+},
+{
+  "directory": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build",
+  "command": "/nix/store/dq0xwmsk1g0i2ayg6pb7y87na2knzylh-gcc-wrapper-11.3.0/bin/g++  -I/home/sami/Code/study/c_cpp/SFML/TecProg_Game/include  -o CMakeFiles/SimpleGame.dir/src/Characters/EnemyCharacter.cpp.o -c /home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Characters/EnemyCharacter.cpp",
+  "file": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Characters/EnemyCharacter.cpp"
+},
+{
+  "directory": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build",
+  "command": "/nix/store/dq0xwmsk1g0i2ayg6pb7y87na2knzylh-gcc-wrapper-11.3.0/bin/g++  -I/home/sami/Code/study/c_cpp/SFML/TecProg_Game/include  -o CMakeFiles/SimpleGame.dir/src/Characters/PlayerCharacter.cpp.o -c /home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Characters/PlayerCharacter.cpp",
+  "file": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Characters/PlayerCharacter.cpp"
+},
+{
+  "directory": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build",
+  "command": "/nix/store/dq0xwmsk1g0i2ayg6pb7y87na2knzylh-gcc-wrapper-11.3.0/bin/g++  -I/home/sami/Code/study/c_cpp/SFML/TecProg_Game/include  -o CMakeFiles/SimpleGame.dir/src/GameObject.cpp.o -c /home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/GameObject.cpp",
+  "file": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/GameObject.cpp"
+},
+{
+  "directory": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build",
+  "command": "/nix/store/dq0xwmsk1g0i2ayg6pb7y87na2knzylh-gcc-wrapper-11.3.0/bin/g++  -I/home/sami/Code/study/c_cpp/SFML/TecProg_Game/include  -o CMakeFiles/SimpleGame.dir/src/Managers/CollisionManager.cpp.o -c /home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Managers/CollisionManager.cpp",
+  "file": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Managers/CollisionManager.cpp"
+},
+{
+  "directory": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build",
+  "command": "/nix/store/dq0xwmsk1g0i2ayg6pb7y87na2knzylh-gcc-wrapper-11.3.0/bin/g++  -I/home/sami/Code/study/c_cpp/SFML/TecProg_Game/include  -o CMakeFiles/SimpleGame.dir/src/Managers/GameManager.cpp.o -c /home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Managers/GameManager.cpp",
+  "file": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Managers/GameManager.cpp"
+},
+{
+  "directory": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build",
+  "command": "/nix/store/dq0xwmsk1g0i2ayg6pb7y87na2knzylh-gcc-wrapper-11.3.0/bin/g++  -I/home/sami/Code/study/c_cpp/SFML/TecProg_Game/include  -o CMakeFiles/SimpleGame.dir/src/Managers/InterfaceManager.cpp.o -c /home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Managers/InterfaceManager.cpp",
+  "file": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Managers/InterfaceManager.cpp"
+},
+{
+  "directory": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build",
+  "command": "/nix/store/dq0xwmsk1g0i2ayg6pb7y87na2knzylh-gcc-wrapper-11.3.0/bin/g++  -I/home/sami/Code/study/c_cpp/SFML/TecProg_Game/include  -o CMakeFiles/SimpleGame.dir/src/Managers/MenuManager.cpp.o -c /home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Managers/MenuManager.cpp",
+  "file": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Managers/MenuManager.cpp"
+},
+{
+  "directory": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build",
+  "command": "/nix/store/dq0xwmsk1g0i2ayg6pb7y87na2knzylh-gcc-wrapper-11.3.0/bin/g++  -I/home/sami/Code/study/c_cpp/SFML/TecProg_Game/include  -o CMakeFiles/SimpleGame.dir/src/Managers/SceneManager.cpp.o -c /home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Managers/SceneManager.cpp",
+  "file": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Managers/SceneManager.cpp"
+},
+{
+  "directory": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build",
+  "command": "/nix/store/dq0xwmsk1g0i2ayg6pb7y87na2knzylh-gcc-wrapper-11.3.0/bin/g++  -I/home/sami/Code/study/c_cpp/SFML/TecProg_Game/include  -o CMakeFiles/SimpleGame.dir/src/Obstacle.cpp.o -c /home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Obstacle.cpp",
+  "file": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Obstacle.cpp"
+},
+{
+  "directory": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build",
+  "command": "/nix/store/dq0xwmsk1g0i2ayg6pb7y87na2knzylh-gcc-wrapper-11.3.0/bin/g++  -I/home/sami/Code/study/c_cpp/SFML/TecProg_Game/include  -o CMakeFiles/SimpleGame.dir/src/PlatformObstacle.cpp.o -c /home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/PlatformObstacle.cpp",
+  "file": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/PlatformObstacle.cpp"
+},
+{
+  "directory": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build",
+  "command": "/nix/store/dq0xwmsk1g0i2ayg6pb7y87na2knzylh-gcc-wrapper-11.3.0/bin/g++  -I/home/sami/Code/study/c_cpp/SFML/TecProg_Game/include  -o CMakeFiles/SimpleGame.dir/src/Projectile.cpp.o -c /home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Projectile.cpp",
+  "file": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Projectile.cpp"
+},
+{
+  "directory": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build",
+  "command": "/nix/store/dq0xwmsk1g0i2ayg6pb7y87na2knzylh-gcc-wrapper-11.3.0/bin/g++  -I/home/sami/Code/study/c_cpp/SFML/TecProg_Game/include  -o CMakeFiles/SimpleGame.dir/src/Systems/GameObjectList.cpp.o -c /home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Systems/GameObjectList.cpp",
+  "file": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Systems/GameObjectList.cpp"
+},
+{
+  "directory": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build",
+  "command": "/nix/store/dq0xwmsk1g0i2ayg6pb7y87na2knzylh-gcc-wrapper-11.3.0/bin/g++  -I/home/sami/Code/study/c_cpp/SFML/TecProg_Game/include  -o CMakeFiles/SimpleGame.dir/src/Systems/List.cpp.o -c /home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Systems/List.cpp",
+  "file": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/Systems/List.cpp"
+},
+{
+  "directory": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build",
+  "command": "/nix/store/dq0xwmsk1g0i2ayg6pb7y87na2knzylh-gcc-wrapper-11.3.0/bin/g++  -I/home/sami/Code/study/c_cpp/SFML/TecProg_Game/include  -o CMakeFiles/SimpleGame.dir/src/main.cpp.o -c /home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/main.cpp",
+  "file": "/home/sami/Code/study/c_cpp/SFML/TecProg_Game/src/main.cpp"
+}
+]

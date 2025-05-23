@@ -1,0 +1,3 @@
+/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build/CMakeFiles/SimpleGame.dir
+/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build/CMakeFiles/edit_cache.dir
+/home/sami/Code/study/c_cpp/SFML/TecProg_Game/build/CMakeFiles/rebuild_cache.dir

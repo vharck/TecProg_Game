@@ -9,5 +9,5 @@ mkdir -p build
 cd build
 cmake ..
 make
-./SFMLTutorial
+./SimpleGame
 cd ..

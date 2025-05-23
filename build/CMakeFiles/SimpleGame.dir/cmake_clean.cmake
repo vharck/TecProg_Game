@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/SimpleGame.dir/src/Characters/BossEnemyCharacter.cpp.o"
+  "CMakeFiles/SimpleGame.dir/src/Characters/BossEnemyCharacter.cpp.o.d"
+  "CMakeFiles/SimpleGame.dir/src/Characters/Character.cpp.o"
+  "CMakeFiles/SimpleGame.dir/src/Characters/Character.cpp.o.d"
+  "CMakeFiles/SimpleGame.dir/src/Characters/EnemyCharacter.cpp.o"
+  "CMakeFiles/SimpleGame.dir/src/Characters/EnemyCharacter.cpp.o.d"
+  "CMakeFiles/SimpleGame.dir/src/Characters/PlayerCharacter.cpp.o"
+  "CMakeFiles/SimpleGame.dir/src/Characters/PlayerCharacter.cpp.o.d"
+  "CMakeFiles/SimpleGame.dir/src/GameObject.cpp.o"
+  "CMakeFiles/SimpleGame.dir/src/GameObject.cpp.o.d"
+  "CMakeFiles/SimpleGame.dir/src/Managers/CollisionManager.cpp.o"
+  "CMakeFiles/SimpleGame.dir/src/Managers/CollisionManager.cpp.o.d"
+  "CMakeFiles/SimpleGame.dir/src/Managers/GameManager.cpp.o"
+  "CMakeFiles/SimpleGame.dir/src/Managers/GameManager.cpp.o.d"
+  "CMakeFiles/SimpleGame.dir/src/Managers/InterfaceManager.cpp.o"
+  "CMakeFiles/SimpleGame.dir/src/Managers/InterfaceManager.cpp.o.d"
+  "CMakeFiles/SimpleGame.dir/src/Managers/MenuManager.cpp.o"
+  "CMakeFiles/SimpleGame.dir/src/Managers/MenuManager.cpp.o.d"
+  "CMakeFiles/SimpleGame.dir/src/Managers/SceneManager.cpp.o"
+  "CMakeFiles/SimpleGame.dir/src/Managers/SceneManager.cpp.o.d"
+  "CMakeFiles/SimpleGame.dir/src/Obstacle.cpp.o"
+  "CMakeFiles/SimpleGame.dir/src/Obstacle.cpp.o.d"
+  "CMakeFiles/SimpleGame.dir/src/PlatformObstacle.cpp.o"
+  "CMakeFiles/SimpleGame.dir/src/PlatformObstacle.cpp.o.d"
+  "CMakeFiles/SimpleGame.dir/src/Projectile.cpp.o"
+  "CMakeFiles/SimpleGame.dir/src/Projectile.cpp.o.d"
+  "CMakeFiles/SimpleGame.dir/src/Systems/GameObjectList.cpp.o"
+  "CMakeFiles/SimpleGame.dir/src/Systems/GameObjectList.cpp.o.d"
+  "CMakeFiles/SimpleGame.dir/src/Systems/List.cpp.o"
+  "CMakeFiles/SimpleGame.dir/src/Systems/List.cpp.o.d"
+  "CMakeFiles/SimpleGame.dir/src/main.cpp.o"
+  "CMakeFiles/SimpleGame.dir/src/main.cpp.o.d"
+  "SimpleGame"
+  "SimpleGame.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/SimpleGame.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
