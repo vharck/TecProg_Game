@@ -30,3 +30,8 @@
 *.exe
 *.out
 *.app
+
+
+# Flake and Nix related files
+flake.lock
+*.nix
