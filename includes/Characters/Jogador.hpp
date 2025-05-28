@@ -13,7 +13,20 @@ namespace JOGACO
     class Jogador : public Personagem, public GerenciadorDeInputs
     {
     private:
-        GerenciadorDeInputs inputManager;
+        const float maxRunSpeed;
+        const float jumpForce;
+        const float acceleration;
+        const float deceleration;
+
+        const int maxCoyoteFrames;
+        const int maxJumpBufferFrames;
+        const int maxJumpHoldFrames;
+
+        int coyoteFCount;
+        int jumpBufferFCount;
+        bool jumpOnBuffer;
+        int jumpHoldFCount;
+        float currentRunSpeed;
 
     public:
         Jogador(Vector2f position, int maxHealth,
@@ -21,9 +34,11 @@ namespace JOGACO
                 Keyboard::Key jumpKey = Keyboard::Space,
                 Keyboard::Key leftKey = Keyboard::A,
                 Keyboard::Key rightKey = Keyboard::D);
+
+        Jogador();
         virtual ~Jogador();
 
-        void move(Vector2f direction);
+        void move();
         void jump();
 
         void update();

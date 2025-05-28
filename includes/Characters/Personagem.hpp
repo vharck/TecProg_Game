@@ -37,8 +37,8 @@ namespace JOGACO
         Personagem(Vector2f position, int maxHealth, CharacterState state = CharacterState::Idle);
         virtual ~Personagem();
 
-        virtual void move(Vector2f direction);
         virtual void update();
+        virtual void move() = 0;
 
         void getHit(int damage);
 

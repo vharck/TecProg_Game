@@ -65,17 +65,33 @@ namespace JOGACO
         {
         case CharacterState::Idle:
         case CharacterState::Running:
+        case CharacterState::Attacking:
+        case CharacterState::Hurt:
             characterState = newState;
             break;
         case CharacterState::Jumping:
         case CharacterState::Falling:
-        case CharacterState::Attacking:
-        case CharacterState::Hurt:
+            if (newState == CharacterState::Idle || newState == CharacterState::Running)
+                if (!isGrounded)
+                    break;
+                else
+                    characterState = newState;
+            break;
         case CharacterState::Dying:
+            if (newState == CharacterState::Dead)
+            {
+                characterState = CharacterState::Dead;
+            }
+            else
+            {
+                throw invalid_argument("Cannot change state from Dying to " + to_string(static_cast<int>(newState)) + ", collisions should be ignored during dying animations!");
+            }
+            break;
         case CharacterState::Dead:
+            throw invalid_argument("Cannot change state from Dead to " + to_string(static_cast<int>(newState)) + ", collisions should be ignored!");
             break;
         default:
-            throw std::invalid_argument("Invalid character state");
+            throw invalid_argument("Invalid character state");
         }
     }
 } // namespace JOGACO
