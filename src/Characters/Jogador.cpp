@@ -9,17 +9,19 @@ namespace JOGACO
 {
     Jogador::Jogador(Vector2f position, int maxHealth, CharacterState state, Keyboard::Key jumpKey, Keyboard::Key leftKey, Keyboard::Key rightKey)
         : Personagem(position, maxHealth, state), GerenciadorDeInputs(jumpKey, leftKey, rightKey),
-          maxRunSpeed(20.f), jumpForce(15.f), acceleration(0.5f), deceleration(0.5f),
+          maxRunSpeed(20.f), jumpForce(15.f), acceleration(0.5f), deceleration(0.5f), airControlFactor(0.5f),
           maxCoyoteFrames(10), maxJumpBufferFrames(10), maxJumpHoldFrames(10),
-          coyoteFCount(0), jumpBufferFCount(0), jumpHoldFCount(0), currentRunSpeed(0.f)
+          coyoteFCount(0), jumpBufferFCount(0), jumpHoldFCount(0), currentRunSpeed(0.f), currentAirSpeed(0.f),
+          jumpOnBuffer(false), hasJumpEndedEarly(false)
     {
     }
 
     Jogador::Jogador()
         : Personagem(), GerenciadorDeInputs(),
           maxRunSpeed(20.f), jumpForce(15.f), acceleration(0.5f), deceleration(0.5f),
-          maxCoyoteFrames(10), maxJumpBufferFrames(10), maxJumpHoldFrames(10),
-          coyoteFCount(0), jumpBufferFCount(0), jumpHoldFCount(0), currentRunSpeed(0.f)
+          maxCoyoteFrames(10), maxJumpBufferFrames(10), maxJumpHoldFrames(10), airControlFactor(0.5f),
+          coyoteFCount(0), jumpBufferFCount(0), jumpHoldFCount(0), currentRunSpeed(0.f), currentAirSpeed(0.f),
+          jumpOnBuffer(false), hasJumpEndedEarly(false)
     {
     }
 
@@ -30,25 +32,26 @@ namespace JOGACO
     void Jogador::move()
     {
         float directionalInput = getDirectionalInput();
-        if (directionalInput != 0.0f)
+        if (isGrounded)
         {
-            if (isGrounded)
+            if (directionalInput != 0.0f)
             {
+
                 if (sign(directionalInput) != sign(currentRunSpeed))
                     currentRunSpeed = moveTowards(currentRunSpeed, directionalInput * maxRunSpeed, deceleration * timeStep);
                 else
                     currentRunSpeed = moveTowards(currentRunSpeed, directionalInput * maxRunSpeed, acceleration * timeStep);
+                setState(CharacterState::Running);
             }
             else
             {
-                // movimento no ar
+                currentRunSpeed = moveTowards(currentRunSpeed, 0.f, deceleration * timeStep);
+                setState(CharacterState::Idle);
             }
-            setState(CharacterState::Running);
         }
         else
         {
-            currentRunSpeed = moveTowards(currentRunSpeed, 0.f, deceleration * timeStep);
-            setState(CharacterState::Idle);
+            currentRunSpeed = moveTowards(currentRunSpeed, directionalInput * maxRunSpeed, acceleration * airControlFactor * timeStep);
         }
 
         if (getJumpInput())
@@ -81,29 +84,75 @@ namespace JOGACO
             default:
                 break;
             }
-
-            if ((getState() == CharacterState::Idle || getState() == CharacterState::Running))
+        }
+        else if (getState() == CharacterState::Jumping)
+        {
+            if (jumpHoldFCount < maxJumpHoldFrames)
             {
-            }
-            else if (getState() == CharacterState::Jumping)
-            {
-                if (jumpHoldFCount < maxJumpHoldFrames)
-                {
-                    jumpHoldFCount++;
-                }
+                hasJumpEndedEarly = true;
+                setState(CharacterState::Falling);
             }
         }
     }
 
     void Jogador::jump()
     {
-        // Implement jump logic here
+        switch (getState())
+        {
+        case CharacterState::Jumping:
+            break;
+
+        case CharacterState::Falling:
+            break;
+
+        default:
+            return;
+        }
+    }
+
+    void Jogador::becameGrounded()
+    {
+        isGrounded = true;
+        coyoteFCount = 0;
+        jumpHoldFCount = 0;
+
+        if (jumpOnBuffer && jumpBufferFCount < maxJumpBufferFrames)
+        {
+            jumpOnBuffer = false;
+            jumpBufferFCount = 0;
+            jump();
+            if (getState() == CharacterState::Jumping || getState() == CharacterState::Falling)
+                getState() == CharacterState::Jumping;
+        }
+        else
+        {
+            if (getState() == CharacterState::Jumping || getState() == CharacterState::Falling)
+                currentRunSpeed != 0.f ? setState(CharacterState::Running) : setState(CharacterState::Idle);
+        }
     }
 
     void Jogador::update()
     {
 
-        // Call base class update
+        if (!isGrounded && coyoteFCount < maxCoyoteFrames)
+            coyoteFCount++;
+        if (jumpOnBuffer && jumpBufferFCount < maxJumpBufferFrames)
+            jumpBufferFCount++;
+        if (getState() == CharacterState::Jumping)
+        {
+            if (jumpHoldFCount < maxJumpHoldFrames)
+                jumpHoldFCount++;
+            else
+            {
+                hasJumpEndedEarly = false;
+                setState(CharacterState::Falling);
+            }
+        }
+
+        move();
+        if (getState() == CharacterState::Jumping || getState() == CharacterState::Falling)
+            jump();
+
         Personagem::update();
     }
 }

@@ -17,6 +17,7 @@ namespace JOGACO
         const float jumpForce;
         const float acceleration;
         const float deceleration;
+        const float airControlFactor;
 
         const int maxCoyoteFrames;
         const int maxJumpBufferFrames;
@@ -26,7 +27,9 @@ namespace JOGACO
         int jumpBufferFCount;
         bool jumpOnBuffer;
         int jumpHoldFCount;
+        bool hasJumpEndedEarly;
         float currentRunSpeed;
+        float currentAirSpeed;
 
     public:
         Jogador(Vector2f position, int maxHealth,
@@ -40,6 +43,7 @@ namespace JOGACO
 
         void move();
         void jump();
+        void becameGrounded();
 
         void update();
     };
