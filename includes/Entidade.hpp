@@ -13,12 +13,16 @@ namespace JOGACO
     {
     protected:
         Vector2f position;
+        const Vector2f size;
         const float gravity = 9.81f;
         ostream buffer;
 
+        Gerenciadores::GerenciadorColisoes::Physic *collider;
+
     public:
         Entidade();
-        Entidade(Vector2f position);
+        Entidade(Vector2f position, Vector2f size,
+                 Gerenciadores::GerenciadorColisoes::Collider::ColliderLayer layer = Gerenciadores::GerenciadorColisoes::Collider::ColliderLayer::Ground);
         virtual ~Entidade();
 
         virtual void update() = 0;

@@ -13,7 +13,9 @@ namespace JOGACO
     }
 
     Personagem::Personagem(Vector2f position, int maxHealth, CharacterState state)
-        : Entidade(position), maxHealth(maxHealth), health(maxHealth), isGrounded(false), characterState(state)
+        : Entidade(position), maxHealth(maxHealth), health(maxHealth),
+          isGrounded(false), currentAirSpeed(0.f), currentRunSpeed(0.f),
+          characterState(state)
     {
     }
 

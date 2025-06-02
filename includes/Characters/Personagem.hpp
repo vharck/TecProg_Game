@@ -13,6 +13,8 @@ namespace JOGACO
         Running,
         Jumping,
         Falling,
+        Patrolling, // For enemies
+        Chasing,    // For enemies
         Attacking,
         Hurt,
         Dying,
@@ -28,6 +30,9 @@ namespace JOGACO
         int maxHealth;
         int health;
         bool isGrounded;
+
+        float currentRunSpeed;
+        float currentAirSpeed;
 
     private:
         virtual void death();

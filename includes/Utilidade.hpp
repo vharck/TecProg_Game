@@ -11,5 +11,7 @@ namespace JOGACO
 
         template <typename T>
         const int sign(const T &value);
+
+        float distance(const sf::Vector2f &a, const sf::Vector2f &b);
     }
 }

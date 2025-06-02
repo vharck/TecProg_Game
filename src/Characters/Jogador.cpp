@@ -11,7 +11,7 @@ namespace JOGACO
         : Personagem(position, maxHealth, state), GerenciadorDeInputs(jumpKey, leftKey, rightKey),
           maxRunSpeed(20.f), jumpForce(15.f), acceleration(0.5f), deceleration(0.5f), airControlFactor(0.5f),
           maxCoyoteFrames(10), maxJumpBufferFrames(10), maxJumpHoldFrames(10),
-          coyoteFCount(0), jumpBufferFCount(0), jumpHoldFCount(0), currentRunSpeed(0.f), currentAirSpeed(0.f),
+          coyoteFCount(0), jumpBufferFCount(0), jumpHoldFCount(0),
           jumpOnBuffer(false), hasJumpEndedEarly(false)
     {
     }
@@ -20,7 +20,7 @@ namespace JOGACO
         : Personagem(), GerenciadorDeInputs(),
           maxRunSpeed(20.f), jumpForce(15.f), acceleration(0.5f), deceleration(0.5f),
           maxCoyoteFrames(10), maxJumpBufferFrames(10), maxJumpHoldFrames(10), airControlFactor(0.5f),
-          coyoteFCount(0), jumpBufferFCount(0), jumpHoldFCount(0), currentRunSpeed(0.f), currentAirSpeed(0.f),
+          coyoteFCount(0), jumpBufferFCount(0), jumpHoldFCount(0),
           jumpOnBuffer(false), hasJumpEndedEarly(false)
     {
     }
@@ -100,9 +100,15 @@ namespace JOGACO
         switch (getState())
         {
         case CharacterState::Jumping:
+            currentAirSpeed = -gravity * timeStep;
+            currentAirSpeed += jumpForce * timeStep;
             break;
 
         case CharacterState::Falling:
+            if (!hasJumpEndedEarly)
+                currentAirSpeed = moveTowards(currentAirSpeed, 0, gravity * timeStep);
+            else
+                currentAirSpeed = gravity * timeStep;
             break;
 
         default:
@@ -153,6 +159,7 @@ namespace JOGACO
         if (getState() == CharacterState::Jumping || getState() == CharacterState::Falling)
             jump();
 
+        setPosition(getPosition() + Vector2f(currentRunSpeed, currentAirSpeed));
         Personagem::update();
     }
 }

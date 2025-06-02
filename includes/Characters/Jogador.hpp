@@ -1,8 +1,5 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-
 #include "Personagem.hpp"
 #include "GerenciadorDeInputs.hpp"
 
@@ -28,8 +25,6 @@ namespace JOGACO
         bool jumpOnBuffer;
         int jumpHoldFCount;
         bool hasJumpEndedEarly;
-        float currentRunSpeed;
-        float currentAirSpeed;
 
     public:
         Jogador(Vector2f position, int maxHealth,
