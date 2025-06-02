@@ -1,7 +1,7 @@
 #include "Cacu.hpp"
 #include "Jogador.hpp"
 
-#include <random>
+#include "Utilidade.hpp"
 
 namespace JOGACO
 {
@@ -18,14 +18,6 @@ namespace JOGACO
 
     Cacu::~Cacu() {}
 
-    int Cacu::random(int min, int max)
-    {
-        static std::random_device rd;
-        static std::mt19937 gen(rd());
-        static std::uniform_int_distribution<> dis(min, max);
-        return dis(gen);
-    }
-
     void Cacu::becameGrounded()
     {
         currentJumpFrame = 0;
@@ -37,23 +29,23 @@ namespace JOGACO
             return;
         if (actionFrameCounter <= 0)
         {
-            int randomValue = random(0, 9);
+            int randomValue = Utilidade::random(0, 9);
 
             if (randomValue < 1)
             {
                 currentAction = CacuAction::Jumping;
-                actionFrameCounter = random(60, 90);
+                actionFrameCounter = Utilidade::random(60, 90);
             }
             else if (randomValue < 7)
             {
                 currentAction = CacuAction::Moving;
                 move(targetPlayer->getPosition());
-                actionFrameCounter = random(120, 150);
+                actionFrameCounter = Utilidade::random(120, 150);
             }
             else
             {
                 currentAction = CacuAction::Attacking;
-                actionFrameCounter = random(90, 120);
+                actionFrameCounter = Utilidade::random(90, 120);
             }
         }
 

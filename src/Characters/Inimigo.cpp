@@ -95,6 +95,7 @@ namespace JOGACO
 
     void Inimigo::onDamageTriggerEnter(Gerenciadores::GerenciadorColisoes::Collider *other)
     {
+        // REQ trycatch
         try
         {
             Personagem *player = dynamic_cast<Personagem *>(other->getParrentEntity());

@@ -18,7 +18,7 @@ namespace JOGACO
     public:
         Ente();
         virtual ~Ente();
-        virtual void execute() = 0;
+        virtual void update() = 0;
         void draw();
     };
 }

@@ -15,7 +15,7 @@ namespace JOGACO
         };
 
         ProjectileType type;
-        sf::Vector2f velocity;
+        sf::Vector2f direction;
         const float speed;
         const int damage;
         const int lifetime;
@@ -24,7 +24,7 @@ namespace JOGACO
         Gerenciadores::GerenciadorColisoes::Trigger *trigger;
 
     public:
-        Projetil(ProjectileType projectileType, sf::Vector2f position, sf::Vector2f velocity, float speed, int damage, int lifetime,
+        Projetil(ProjectileType projectileType, sf::Vector2f position, sf::Vector2f direction, float speed, int damage, int lifetime,
                  sf::Vector2f size = sf::Vector2f(10.f, 10.f),
                  Gerenciadores::GerenciadorColisoes::Collider::ColliderLayer layer = Gerenciadores::GerenciadorColisoes::Collider::ColliderLayer::GenericTrigger);
         ~Projetil();
@@ -33,7 +33,7 @@ namespace JOGACO
         void move();
         void onCollisionEnter(Gerenciadores::GerenciadorColisoes::Collider *other);
 
-        const sf::Vector2f &getVelocity() const;
-        void setVelocity(const sf::Vector2f &newVelocity);
+        const sf::Vector2f &getDirection() const;
+        void setDirection(const sf::Vector2f &newDirection);
     };
 }

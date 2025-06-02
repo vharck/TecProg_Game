@@ -27,8 +27,6 @@ namespace JOGACO
              CharacterState state = CharacterState::Idle);
         ~Cacu();
 
-        static int random(int min = 0, int max = 100);
-
         void becameGrounded() override;
         void chase() override;
         void jump() override;

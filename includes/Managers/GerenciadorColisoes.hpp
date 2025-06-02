@@ -19,10 +19,10 @@ namespace JOGACO
     {
         class GerenciadorColisoes
         {
-
         public:
             class Collider : public sf::RectangleShape
             {
+                // REQ classe aninhada
             public:
                 enum class ColliderLayer
                 {

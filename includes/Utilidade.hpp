@@ -13,5 +13,7 @@ namespace JOGACO
         const int sign(const T &value);
 
         float distance(const sf::Vector2f &a, const sf::Vector2f &b);
+
+        static int random(int min = 0, int max = 100);
     }
 }

@@ -8,10 +8,10 @@
 
 namespace JOGACO
 {
-    Projetil::Projetil(ProjectileType _projectileType, sf::Vector2f position, sf::Vector2f velocity, float speed, int damage, int lifetime, sf::Vector2f size, Gerenciadores::GerenciadorColisoes::Collider::ColliderLayer layer)
+    Projetil::Projetil(ProjectileType _projectileType, sf::Vector2f position, sf::Vector2f _direction, float _speed, int _damage, int _lifetime, sf::Vector2f size, Gerenciadores::GerenciadorColisoes::Collider::ColliderLayer layer)
         : Entidade(position, sf::Vector2f(10.f, 10.f), layer),
-          type(_projectileType), velocity(velocity), speed(speed), damage(damage),
-          lifetime(lifetime), currentLifetime(0)
+          type(_projectileType), direction(_direction), speed(_speed), damage(_damage),
+          lifetime(_lifetime), currentLifetime(0)
     {
         trigger = new Gerenciadores::GerenciadorColisoes::Trigger(this, position, size, layer);
         trigger->subscribeToCollisionEnter(this, &Projetil::onCollisionEnter);
@@ -51,16 +51,15 @@ namespace JOGACO
 
     void Projetil::move()
     {
-
         switch (type)
         {
         case ProjectileType::Normal:
-            sf::Vector2f newPosition(getPosition() + velocity * speed * Utilidade::timeStep);
+            sf::Vector2f newPosition(getPosition() + direction * speed * Utilidade::timeStep);
             setPosition(newPosition);
             break;
 
         case ProjectileType::Bouncing:
-            sf::Vector2f newPosition(velocity.x * lifetime * Utilidade::timeStep * speed, std::abs(std::sin(lifetime * Utilidade::timeStep) * speed));
+            sf::Vector2f newPosition(direction.x * lifetime * Utilidade::timeStep * speed, std::abs(std::sin(lifetime * Utilidade::timeStep) * speed));
             setPosition(newPosition);
             break;
 
@@ -70,12 +69,13 @@ namespace JOGACO
         }
     }
 
-    const sf::Vector2f &Projetil::getVelocity() const
+    const sf::Vector2f &Projetil::getDirection() const
     {
-        return velocity;
+        return direction;
     }
 
-    void Projetil::setVelocity(const sf::Vector2f &newVelocity)
+    void Projetil::setDirection(const sf::Vector2f &newDirection)
     {
+        direction = newDirection;
     }
 }

@@ -57,6 +57,7 @@ namespace JOGACO
         virtual void patrol() = 0;
         virtual void move() = 0;
         virtual void attack() = 0;
+        virtual void save() = 0;
 
     public:
         Inimigo(Vector2f _position, int _maxHealth, int _threatLevel,
