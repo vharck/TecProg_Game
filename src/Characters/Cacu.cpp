@@ -96,18 +96,28 @@ namespace JOGACO
 
     void Cacu::attack()
     {
+        // precisa fazer o projetil antes de fazer o ataque dele
+        // mas vai ser basicamente uma bola de fogo que viaja quicando no chão tipo em seno só que só positivo
+        // e outro ataque que ele da um tapão no chão e joga tudo pra cima
+        // um outro ataque dele, bem baixo a chance de acontecer, ele joga um jack no player
+        // esse jack é vermelho e fica só correndo atrás do player
     }
 
     void Cacu::move(const sf::Vector2f &target)
     {
+        // tem que ver a questão do movimento que a velocidade dele é meio aleatória
+        // dai ele anda rápido pracima do player e fica lento depois
+        // ele corre atrás do player mas não sai da área de patrulha
     }
 
     void Cacu::update()
     {
+        // só roda tudo
     }
 
     void Cacu::patrol()
     {
+
         setState(CharacterState::Idle);
     }
 } // namespace JOGACO

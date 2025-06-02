@@ -2,7 +2,7 @@
 
 #include "Personagem.hpp"
 
-#include <Vector>
+#include <vector>
 
 using namespace sf;
 
