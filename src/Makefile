@@ -4,7 +4,16 @@ LDFLAGS = -L../lib -lsfml-graphics -lsfml-window -lsfml-system
 
 SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
-EXE = main.exe
+
+# se windows, senao
+ifeq ($(OS),Windows_NT)
+    EXE = main.exe
+    RM = del /Q
+else
+    EXE = main
+    RM = rm -f
+endif
+
 
 all: $(EXE)
 
@@ -15,6 +24,6 @@ $(EXE): $(OBJ)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	del /Q *.o *.exe
+	$(RM) *.o $(EXE)
 
 .PHONY: all clean
